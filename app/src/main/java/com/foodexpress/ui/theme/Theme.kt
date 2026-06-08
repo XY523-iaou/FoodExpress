@@ -65,5 +65,3 @@ fun FoodExpressTheme(
     )
 }
 
-// Add to res/values/themes.xml
-// Note: We also need a basic XML theme for the manifest

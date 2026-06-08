@@ -1,8 +1,5 @@
 package com.foodexpress.navigation
 
-/**
- * Defines all navigation destinations in the app.
- */
 sealed class Screen(val route: String) {
     // Auth
     data object Login : Screen("auth/login")
