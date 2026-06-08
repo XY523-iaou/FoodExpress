@@ -87,7 +87,6 @@ fun CheckoutScreen(
         LazyColumn(
             modifier = Modifier.fillMaxSize().padding(paddingValues)
         ) {
-            // Restaurant
             item {
                 Card(modifier = Modifier.fillMaxWidth().padding(12.dp)) {
                     Row(modifier = Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -98,7 +97,6 @@ fun CheckoutScreen(
                 }
             }
 
-            // Items summary
             item {
                 Card(modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp)) {
                     Column(modifier = Modifier.padding(12.dp)) {
@@ -129,7 +127,6 @@ fun CheckoutScreen(
                 }
             }
 
-            // Address
             item {
                 Card(modifier = Modifier.fillMaxWidth().padding(12.dp)) {
                     Column(modifier = Modifier.padding(12.dp)) {
@@ -158,7 +155,6 @@ fun CheckoutScreen(
                 }
             }
 
-            // Note
             item {
                 Card(modifier = Modifier.fillMaxWidth().padding(12.dp)) {
                     Column(modifier = Modifier.padding(12.dp)) {

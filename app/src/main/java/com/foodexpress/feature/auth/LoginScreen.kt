@@ -59,7 +59,6 @@ fun LoginScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // App Logo / Title
             Text(
                 text = "🍔 FoodExpress",
                 style = MaterialTheme.typography.displayLarge,
@@ -76,7 +75,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(48.dp))
 
-            // Email Field
             OutlinedTextField(
                 value = email,
                 onValueChange = { email = it },
@@ -97,7 +95,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Password Field
             OutlinedTextField(
                 value = password,
                 onValueChange = { password = it },
@@ -129,7 +126,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Login Button
             Button(
                 onClick = { viewModel.login(email, password) },
                 enabled = email.isNotBlank() && password.isNotBlank() && !uiState.isLoading,
@@ -149,7 +145,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Register Link
             TextButton(onClick = onNavigateToRegister) {
                 Text("还没有账号？立即注册")
             }

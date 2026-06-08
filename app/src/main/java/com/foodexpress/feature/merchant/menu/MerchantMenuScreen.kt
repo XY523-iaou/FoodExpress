@@ -18,7 +18,6 @@ fun MerchantMenuScreen(
     onBackClick: () -> Unit,
     onAddItemClick: () -> Unit
 ) {
-    // Mock menu items for now
     val menuItems = remember {
         listOf(
             MenuItemData("1", "招牌炸酱面", "面食", 18.0, true),
@@ -77,7 +76,7 @@ fun MerchantMenuScreen(
                             )
                         }
                         Spacer(modifier = Modifier.width(8.dp))
-                        IconButton(onClick = { /* edit */ }) {
+                        IconButton(onClick = { }) {
                             Icon(Icons.Default.Edit, contentDescription = "编辑", modifier = Modifier.size(20.dp))
                         }
                     }

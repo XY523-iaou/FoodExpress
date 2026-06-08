@@ -42,7 +42,6 @@ class RestaurantDetailViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true)
 
-            // Load restaurant info
             restaurantRepository.getRestaurantById(restaurantId).fold(
                 onSuccess = { restaurant ->
                     _uiState.value = _uiState.value.copy(
@@ -55,7 +54,6 @@ class RestaurantDetailViewModel @Inject constructor(
                 }
             )
 
-            // Load menu items
             restaurantRepository.getMenuItems(restaurantId).fold(
                 onSuccess = { items ->
                     _uiState.value = _uiState.value.copy(

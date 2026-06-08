@@ -32,7 +32,6 @@ class AuthRepositoryImpl @Inject constructor(
         val listener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val firebaseUser = firebaseAuth.currentUser
             if (firebaseUser != null) {
-                // Fetch user document from Firestore
                 firestore.collection("users").document(firebaseUser.uid)
                     .get()
                     .addOnSuccessListener { doc ->

@@ -17,7 +17,7 @@ data class HomeUiState(
     val selectedCategory: String = "全部",
     val searchQuery: String = "",
     val error: String? = null,
-    val showSeedButton: Boolean = false  // Show when no restaurants exist
+    val showSeedButton: Boolean = false
 )
 
 @HiltViewModel

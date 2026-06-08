@@ -84,7 +84,6 @@ fun RestaurantDetailScreen(
                 return@LazyColumn
             }
 
-            // Restaurant Header
             item {
                 RestaurantHeader(
                     restaurant = uiState.restaurant,
@@ -92,7 +91,6 @@ fun RestaurantDetailScreen(
                 )
             }
 
-            // Category tabs
             item {
                 CategoryTabs(
                     categories = uiState.categories,
@@ -101,7 +99,6 @@ fun RestaurantDetailScreen(
                 )
             }
 
-            // Menu items
             items(uiState.filteredMenuItems) { item ->
                 MenuItemCard(
                     menuItem = item,
@@ -126,7 +123,6 @@ fun RestaurantDetailScreen(
                 }
             }
 
-            // Bottom padding
             item { Spacer(modifier = Modifier.height(80.dp)) }
         }
     }
@@ -225,7 +221,6 @@ fun CategoryTabs(
         divider = {},
         containerColor = MaterialTheme.colorScheme.surface
     ) {
-        // "全部" tab
         Tab(
             selected = selectedCategoryId == null,
             onClick = { onCategorySelected(null) },
@@ -262,7 +257,6 @@ fun MenuItemCard(
                 .fillMaxWidth()
                 .padding(12.dp)
         ) {
-            // Item image
             AsyncImage(
                 model = menuItem.imageUrl,
                 contentDescription = menuItem.name,
@@ -273,7 +267,6 @@ fun MenuItemCard(
             Spacer(modifier = Modifier.width(12.dp))
 
             Column(modifier = Modifier.weight(1f)) {
-                // Name + tags
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         text = menuItem.name,
@@ -321,7 +314,6 @@ fun MenuItemCard(
                         color = MaterialTheme.colorScheme.primary
                     )
 
-                    // Quantity controls
                     if (cartQuantity > 0) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             SmallFloatingActionButton(
@@ -365,7 +357,6 @@ fun MenuItemCard(
                     }
                 }
 
-                // Sales count
                 if (menuItem.salesCount > 0) {
                     Text(
                         text = "已售${menuItem.salesCount}份",

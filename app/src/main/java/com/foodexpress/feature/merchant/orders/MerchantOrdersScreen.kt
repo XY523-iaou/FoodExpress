@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 fun MerchantOrdersScreen(
     onBackClick: () -> Unit
 ) {
-    // Mock orders
     val orders = remember {
         listOf(
             MockOrder("ORD001", "张三", "招牌炸酱面 x2, 拍黄瓜 x1", 44.0, "已下单", "5分钟前"),
@@ -93,7 +92,6 @@ fun MerchantOrdersScreen(
                                 color = MaterialTheme.colorScheme.primary)
                         }
 
-                        // Action buttons for new orders
                         if (order.status == "已下单") {
                             Spacer(modifier = Modifier.height(12.dp))
                             Row(

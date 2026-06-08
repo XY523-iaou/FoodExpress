@@ -39,7 +39,6 @@ fun ProfileScreen(
                 .padding(paddingValues)
                 .padding(16.dp)
         ) {
-            // User Info Card
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 colors = CardDefaults.cardColors(
@@ -82,7 +81,6 @@ fun ProfileScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Menu Items
             Card(modifier = Modifier.fillMaxWidth()) {
                 Column {
                     ProfileMenuItem(
@@ -113,7 +111,6 @@ fun ProfileScreen(
 
             Spacer(modifier = Modifier.weight(1f))
 
-            // Logout Button
             OutlinedButton(
                 onClick = { authViewModel.logout() },
                 modifier = Modifier.fillMaxWidth().height(50.dp),

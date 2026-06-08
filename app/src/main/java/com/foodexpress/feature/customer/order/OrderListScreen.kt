@@ -127,7 +127,6 @@ fun OrderCard(order: Order, onClick: () -> Unit) {
             HorizontalDivider()
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Order items summary
             Text(
                 text = order.items.joinToString(", ") { "${it.menuItem.name} x${it.quantity}" },
                 style = MaterialTheme.typography.bodySmall,

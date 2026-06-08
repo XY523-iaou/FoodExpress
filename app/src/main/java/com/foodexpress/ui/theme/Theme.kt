@@ -6,15 +6,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
-// Brand colors
 private val LightColorScheme = lightColorScheme(
-    primary = androidx.compose.ui.graphics.Color(0xFFFF6B35),        // 品牌橙
+    primary = androidx.compose.ui.graphics.Color(0xFFFF6B35),
     onPrimary = androidx.compose.ui.graphics.Color.White,
     primaryContainer = androidx.compose.ui.graphics.Color(0xFFFFDBC8),
-    secondary = androidx.compose.ui.graphics.Color(0xFF2EC4B6),      // 活力青
+    secondary = androidx.compose.ui.graphics.Color(0xFF2EC4B6),
     onSecondary = androidx.compose.ui.graphics.Color.White,
     secondaryContainer = androidx.compose.ui.graphics.Color(0xFFC8F7F3),
-    tertiary = androidx.compose.ui.graphics.Color(0xFFFFB800),       // 强调黄
+    tertiary = androidx.compose.ui.graphics.Color(0xFFFFB800),
     background = androidx.compose.ui.graphics.Color(0xFFF8F9FA),
     surface = androidx.compose.ui.graphics.Color.White,
     surfaceVariant = androidx.compose.ui.graphics.Color(0xFFF0F0F0),

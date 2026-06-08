@@ -41,7 +41,6 @@ fun RoleSelectScreen(
 
         Spacer(modifier = Modifier.height(48.dp))
 
-        // Customer Card
         RoleCard(
             icon = { Icon(Icons.Default.Person, contentDescription = null, modifier = Modifier.size(48.dp)) },
             title = "我是顾客",
@@ -52,7 +51,6 @@ fun RoleSelectScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Merchant Card
         RoleCard(
             icon = { Icon(Icons.Default.Store, contentDescription = null, modifier = Modifier.size(48.dp)) },
             title = "我是商家",
@@ -92,7 +90,6 @@ private fun RoleCard(
         ),
         border = if (isSelected)
             CardDefaults.outlinedCardBorder().copy(
-                // highlighted border via color
             )
         else null
     ) {

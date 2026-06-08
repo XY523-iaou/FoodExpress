@@ -30,7 +30,6 @@ fun AppNavigation(navController: NavHostController) {
         navController = navController,
         startDestination = Screen.Login.route
     ) {
-        // Auth
         composable(Screen.Login.route) {
             LoginScreen(
                 viewModel = authViewModel,
@@ -66,7 +65,6 @@ fun AppNavigation(navController: NavHostController) {
             )
         }
 
-        // Customer - Home
         composable(Screen.Home.route) {
             HomeScreen(
                 onRestaurantClick = { id -> navController.navigate(Screen.RestaurantDetail.createRoute(id)) },
@@ -76,7 +74,6 @@ fun AppNavigation(navController: NavHostController) {
             )
         }
 
-        // Customer - Restaurant detail
         composable(
             route = Screen.RestaurantDetail.route,
             arguments = listOf(navArgument("restaurantId") { type = NavType.StringType })
@@ -89,7 +86,6 @@ fun AppNavigation(navController: NavHostController) {
             )
         }
 
-        // Customer - Cart
         composable(Screen.Cart.route) {
             CartScreen(
                 onBackClick = { navController.popBackStack() },
@@ -97,7 +93,6 @@ fun AppNavigation(navController: NavHostController) {
             )
         }
 
-        // Customer - Checkout
         composable(Screen.Checkout.route) {
             CheckoutScreen(
                 onBackClick = { navController.popBackStack() },
@@ -109,7 +104,6 @@ fun AppNavigation(navController: NavHostController) {
             )
         }
 
-        // Customer - Orders
         composable(Screen.OrderTracking.route) {
             OrderListScreen(
                 onBackClick = { navController.popBackStack() },
@@ -128,12 +122,10 @@ fun AppNavigation(navController: NavHostController) {
             )
         }
 
-        // Customer - Profile
         composable(Screen.Profile.route) {
             ProfileScreen(onBackClick = { navController.popBackStack() })
         }
 
-        // Merchant
         composable(Screen.MerchantDashboard.route) {
             MerchantDashboardScreen(
                 onMenuClick = { navController.navigate(Screen.MerchantMenu.route) },

@@ -26,7 +26,6 @@ class CartManager @Inject constructor() {
 
     fun setRestaurant(restaurant: Restaurant?) {
         if (_currentRestaurant.value?.id != restaurant?.id) {
-            // Different restaurant - clear cart
             _cartItems.value = emptyList()
         }
         _currentRestaurant.value = restaurant

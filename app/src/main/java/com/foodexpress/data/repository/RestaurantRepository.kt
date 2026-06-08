@@ -100,9 +100,6 @@ class RestaurantRepositoryImpl @Inject constructor(
         }
     }
 
-    /**
-     * Seeds sample restaurant data into Firestore for demo purposes.
-     */
     override suspend fun seedSampleData() {
         val sampleRestaurants = listOf(
             Restaurant(
@@ -222,45 +219,38 @@ class RestaurantRepositoryImpl @Inject constructor(
         )
 
         val sampleMenuItems = listOf(
-            // 老北京炸酱面馆
             MenuItem("item_001", "招牌炸酱面", "手工拉面配秘制炸酱，黄瓜丝、豆芽、萝卜丝", 18.0, "https://images.unsplash.com/photo-1555126634-323283e090fa?w=300", categoryId = "cat_001", restaurantId = "rest_001", tags = listOf("招牌", "热销"), salesCount = 1520),
             MenuItem("item_002", "红烧牛肉面", "大块牛腩慢炖4小时，汤浓面筋道", 28.0, "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=300", categoryId = "cat_001", restaurantId = "rest_001", tags = listOf("热销"), salesCount = 980),
             MenuItem("item_003", "葱油拌面", "小葱熬制葱油，简单纯粹的老味道", 12.0, "https://images.unsplash.com/photo-1612927601601-663312b78f7e?w=300", categoryId = "cat_002", restaurantId = "rest_001", tags = listOf("素"), salesCount = 650),
             MenuItem("item_004", "拍黄瓜", "蒜泥香油拌制，清爽解腻", 8.0, "https://images.unsplash.com/photo-1599816857075-08a4776609f3?w=300", categoryId = "cat_003", restaurantId = "rest_001"),
             MenuItem("item_005", "酸梅汤", "古法熬制，冰镇酸甜", 6.0, "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=300", categoryId = "cat_004", restaurantId = "rest_001", tags = listOf("冰镇")),
 
-            // 樱花日式料理
             MenuItem("item_101", "三文鱼刺身", "挪威进口三文鱼，厚切8片", 68.0, "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=300", categoryId = "cat_202", restaurantId = "rest_002", tags = listOf("人气", "进口"), salesCount = 890),
             MenuItem("item_102", "豪华寿司拼盘", "三文鱼、金枪鱼、甜虾、鳗鱼等12贯", 128.0, "https://images.unsplash.com/photo-1579027989536-b7b1f875659b?w=300", categoryId = "cat_201", restaurantId = "rest_002", tags = listOf("招牌"), salesCount = 670),
             MenuItem("item_103", "鳗鱼饭定食", "蒲烧鳗鱼配米饭、味噌汤、小菜", 58.0, "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=300", categoryId = "cat_203", restaurantId = "rest_002", tags = listOf("套餐")),
             MenuItem("item_104", "抹茶拿铁", "京都宇治抹茶粉，浓郁回甘", 22.0, "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=300", categoryId = "cat_204", restaurantId = "rest_002"),
 
-            // 川味轩
             MenuItem("item_201", "水煮鱼", "鲜活草鱼片，麻辣鲜香，配豆芽木耳", 48.0, "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=300", categoryId = "cat_301", restaurantId = "rest_003", tags = listOf("招牌", "麻辣"), salesCount = 2100),
             MenuItem("item_202", "回锅肉", "二刀肉配蒜苗豆豉，色泽红亮", 32.0, "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=300", categoryId = "cat_301", restaurantId = "rest_003", tags = listOf("经典")),
             MenuItem("item_203", "麻辣香锅", "自选6种食材，秘制麻辣底料炒制", 45.0, "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=300", categoryId = "cat_302", restaurantId = "rest_003", tags = listOf("辣"), salesCount = 780),
             MenuItem("item_204", "担担面", "肉臊花生碎，麻辣微甜", 14.0, "https://images.unsplash.com/photo-1552611052-33e0a5c12f7e?w=300", categoryId = "cat_304", restaurantId = "rest_003"),
 
-            // 汉堡大师
             MenuItem("item_301", "经典芝士汉堡", "安格斯牛肉饼+车达芝士+生菜番茄", 25.0, "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300", categoryId = "cat_402", restaurantId = "rest_004", tags = listOf("经典"), salesCount = 3200),
             MenuItem("item_302", "双层牛肉堡", "双层安格斯牛肉饼+培根+煎蛋", 38.0, "https://images.unsplash.com/photo-1550547660-d9450f859349?w=300", categoryId = "cat_402", restaurantId = "rest_004", tags = listOf("重磅")),
             MenuItem("item_303", "超值单人套餐", "汉堡+薯条+可乐", 32.0, "https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?w=300", categoryId = "cat_401", restaurantId = "rest_004", tags = listOf("套餐", "超值")),
             MenuItem("item_304", "鸡米花", "外酥里嫩，配番茄酱", 12.0, "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=300", categoryId = "cat_403", restaurantId = "rest_004"),
 
-            // 泰味椰香
             MenuItem("item_401", "冬阴功汤", "大虾、蘑菇、香茅、椰奶，酸辣开胃", 38.0, "https://images.unsplash.com/photo-1559314809-0d155014e29e?w=300", categoryId = "cat_502", restaurantId = "rest_005", tags = listOf("招牌"), salesCount = 560),
             MenuItem("item_402", "黄咖喱蟹", "鲜活花蟹配黄咖喱，配法棍面包", 88.0, "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=300", categoryId = "cat_501", restaurantId = "rest_005", tags = listOf("人气")),
             MenuItem("item_403", "泰式炒河粉", "大虾、豆芽、花生碎，经典Pad Thai", 28.0, "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=300", categoryId = "cat_503", restaurantId = "rest_005"),
             MenuItem("item_404", "芒果糯米饭", "新鲜芒果配椰浆糯米，甜蜜收尾", 18.0, "https://images.unsplash.com/photo-1621293954908-907159247fc8?w=300", categoryId = "cat_504", restaurantId = "rest_005", tags = listOf("甜点")),
 
-            // 必胜披萨屋
             MenuItem("item_501", "玛格丽特披萨", "圣马扎诺番茄+水牛莫扎瑞拉+新鲜罗勒", 48.0, "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300", categoryId = "cat_601", restaurantId = "rest_006", tags = listOf("经典"), salesCount = 1100),
             MenuItem("item_502", "意式肉酱面", "博洛尼亚肉酱配帕尔马干酪", 35.0, "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=300", categoryId = "cat_602", restaurantId = "rest_006", tags = listOf("热销")),
             MenuItem("item_503", "凯撒沙拉", "罗马生菜+培根碎+帕玛森芝士+凯撒酱", 28.0, "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=300", categoryId = "cat_603", restaurantId = "rest_006"),
             MenuItem("item_504", "鲜榨橙汁", "100%鲜榨，不加糖不加水", 15.0, "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=300", categoryId = "cat_604", restaurantId = "rest_006", tags = listOf("鲜榨"))
         )
 
-        // Write restaurants
         for (restaurant in sampleRestaurants) {
             val data = mapOf(
                 "name" to restaurant.name,
@@ -281,7 +271,6 @@ class RestaurantRepositoryImpl @Inject constructor(
             firestore.collection("restaurants").document(restaurant.id).set(data).await()
         }
 
-        // Write menu items
         for (item in sampleMenuItems) {
             val data = mapOf(
                 "name" to item.name,

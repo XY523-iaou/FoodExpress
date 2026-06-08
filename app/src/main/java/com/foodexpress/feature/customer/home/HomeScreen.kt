@@ -85,7 +85,6 @@ fun HomeScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
-            // Search Bar
             item {
                 SearchBarSection(
                     query = uiState.searchQuery,
@@ -93,7 +92,6 @@ fun HomeScreen(
                 )
             }
 
-            // Category Chips
             item {
                 CategoryChipsRow(
                     categories = uiState.categories,
@@ -102,14 +100,12 @@ fun HomeScreen(
                 )
             }
 
-            // Seed Data Button (shown when no data)
             if (uiState.showSeedButton) {
                 item {
                     SeedDataBanner(onSeedClick = viewModel::seedData)
                 }
             }
 
-            // Loading
             if (uiState.isLoading) {
                 item {
                     Box(
@@ -123,7 +119,6 @@ fun HomeScreen(
                 }
             }
 
-            // Section Header
             item {
                 Text(
                     text = "附近餐厅 (${uiState.restaurants.size})",
@@ -133,7 +128,6 @@ fun HomeScreen(
                 )
             }
 
-            // Restaurant Grid
             item {
                 RestaurantGrid(
                     restaurants = uiState.restaurants,
@@ -232,7 +226,6 @@ fun RestaurantGrid(
         return
     }
 
-    // Using a non-scrollable grid inside LazyColumn via item { }
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -265,7 +258,6 @@ fun RestaurantCard(
                 .fillMaxWidth()
                 .height(120.dp)
         ) {
-            // Restaurant Image
             AsyncImage(
                 model = restaurant.imageUrl,
                 contentDescription = restaurant.name,
@@ -275,7 +267,6 @@ fun RestaurantCard(
                     .fillMaxHeight()
             )
 
-            // Info
             Column(
                 modifier = Modifier
                     .weight(1f)

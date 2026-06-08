@@ -53,7 +53,6 @@ fun OrderDetailScreen(
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // Status tracker
             item {
                 Card {
                     Column(Modifier.padding(16.dp)) {
@@ -64,7 +63,6 @@ fun OrderDetailScreen(
                 }
             }
 
-            // Restaurant info
             item {
                 Card {
                     Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -80,7 +78,6 @@ fun OrderDetailScreen(
                 }
             }
 
-            // Items
             item {
                 Card {
                     Column(Modifier.padding(16.dp)) {
@@ -117,7 +114,6 @@ fun OrderDetailScreen(
                 }
             }
 
-            // Delivery info
             item {
                 Card {
                     Column(Modifier.padding(16.dp)) {
@@ -140,7 +136,6 @@ fun OrderDetailScreen(
                 }
             }
 
-            // Note
             if (order.note.isNotBlank()) {
                 item {
                     Card {
@@ -154,7 +149,6 @@ fun OrderDetailScreen(
                 }
             }
 
-            // Time
             item {
                 Text(
                     text = "下单时间: ${java.text.SimpleDateFormat("yyyy-MM-dd HH:mm", java.util.Locale.getDefault()).format(java.util.Date(order.createdAt))}",
@@ -197,7 +191,6 @@ fun OrderStatusTracker(currentStatus: OrderStatus) {
         val isCurrent = index == currentIndex
 
         Row(verticalAlignment = Alignment.CenterVertically) {
-            // Indicator
             Surface(
                 modifier = Modifier.size(if (isCurrent) 28.dp else 24.dp),
                 shape = MaterialTheme.shapes.extraLarge,

@@ -51,7 +51,6 @@ fun MerchantDashboardScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Stats cards
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
@@ -100,7 +99,6 @@ fun MerchantDashboardScreen(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // Action cards
             ActionCard(
                 title = "菜单管理",
                 subtitle = "添加、编辑、下架菜品",
@@ -119,7 +117,6 @@ fun MerchantDashboardScreen(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Toggle shop status
             var isOpen by remember { mutableStateOf(true) }
             ActionCard(
                 title = if (isOpen) "营业中" else "已打烊",

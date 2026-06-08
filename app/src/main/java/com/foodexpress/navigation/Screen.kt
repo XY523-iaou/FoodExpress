@@ -1,12 +1,10 @@
 package com.foodexpress.navigation
 
 sealed class Screen(val route: String) {
-    // Auth
     data object Login : Screen("auth/login")
     data object Register : Screen("auth/register")
     data object RoleSelect : Screen("auth/role_select")
 
-    // Customer
     data object Home : Screen("customer/home")
     data object RestaurantDetail : Screen("customer/restaurant/{restaurantId}") {
         fun createRoute(restaurantId: String) = "customer/restaurant/$restaurantId"
@@ -20,7 +18,6 @@ sealed class Screen(val route: String) {
     data object Profile : Screen("customer/profile")
     data object AddressManager : Screen("customer/addresses")
 
-    // Merchant
     data object MerchantDashboard : Screen("merchant/dashboard")
     data object MerchantMenu : Screen("merchant/menu")
     data object MerchantOrders : Screen("merchant/orders")
